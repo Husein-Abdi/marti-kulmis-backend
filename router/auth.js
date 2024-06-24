@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-// const jwt = require("jsonwebtoken")
 const User = require("../model/userSchema");
 const authenticate = require("../middleware/authenticate");
 const cookieParser = require("cookie-parser");
@@ -21,7 +20,6 @@ router.post("/register", async (req, res) => {
   if (!name || !email || !phone || !work || !password || !cpassword) {
     return res.status(422).json({ error: "Please fill all details" });
   }
-  // Regular expression to validate full name with at least two words separated by a space
 
   const nameRegex = /^[\w']+\s[\w']+$/;
 
